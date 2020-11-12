@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { View, Text, TextInput } from 'react-native'
 import { TouchableNativeFeedback } from 'react-native-gesture-handler'
 
-import NavbarSettings from '../components/settings/NavbarSettings'
+import NavbarSettings from '../components/settings/Navbar'
 import styles from '../styles/Settings'
 
 const ChangePassword = ({ navigation }) => {

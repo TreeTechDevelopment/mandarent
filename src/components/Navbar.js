@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 
 import Shadow from './Shadow'
 
-const logo = require('../../assets/images/logo.png')
+const logo = require('../../assets/images/logo1.png')
 
 const { width, height } = Dimensions.get('window')
 
@@ -13,20 +13,20 @@ const styles = StyleSheet.create({
     navbar:{
         width,
         paddingRight: 20,
-        paddingVertical: 10,
+        paddingTop: 10,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
         borderBottomColor: 'rgb(60,60,60)',
-        borderBottomWidth: 1,
+        borderBottomWidth: 0.5,
         paddingLeft: width * 0.1,
         backgroundColor: 'white',
         position: 'relative',
         top: -5
     },
     logo:{
-        width: width * 0.2,
-        height: height * 0.1
+        width: width * 0.1,
+        height: height * 0.07,
     },
 })
 

@@ -5,53 +5,11 @@ import {Picker} from '@react-native-community/picker';
 
 import styles from '../../styles/Rent'
 
+import { cities, SabuncuStreets, SebailStreets, SuraxaniStreets, AbsheronStreets, BineqediStreets,
+    NerimanovStreets, NesimiStreets, NizamiStreets, QaradagStreets, XetaiStreets,
+    XezerStreets, YasamalStreets, hours, districts} from '../../data'
+
 const FormStep3 = ({ next, prevCity, prevDistrict, prevStreet, prevHour, prevDay }) => {
-    
-    const cities = ['City/District', 'Baku-Absheron', 'Aghjabadi', 'Agdam', 'Agdash', 'Agstafa', 'Agsu', 'Shirvan', 'Astara', 'Balakan',
-                    'Barda', 'Beylagan', 'Bilasuvar', 'Jabrayil', 'Jalilabad', 'Dashkasan', 'Shabran', 'Fuzuli', 'Gadabay',
-                    'Ganja', 'Goranboy', 'Goychay', 'Hajigabul', 'Imishli', 'Ismailli', 'Kalbajar', 'Kurdamir', 'Lachin',
-                    'Lankaran', ' Lerik', 'Masally', 'Mingachevir', 'Naftalan', 'Neftchala', 'Oghuz', 'Qabala', 'Qakh',
-                    'Qazakh', 'Gobustan', 'Quba', 'Qubadli', 'Qusar', 'Saatly', 'Sabirabad', 'Shaki', 'Salyan', 'Shamakhi',
-                    'Shamkir', 'Samukh', 'Siazan', 'Sumqayit', 'Shusha', 'Tartar', 'Tovuz', 'Ujar', 'Khachmaz', 'Khankendi',
-                    'Goygol', 'Khizi', 'Khojaly', 'Khojavend', 'Yardymli', 'Yevlakh', 'Zangilan', 'Zaqatala', 'Zardab']
-
-    const districts = [ 'District', 'Abşeron', 'Binəqədi', 'Xətai', 'Xəzər', 'Qaradağ', 'Nərimanov', 'Nəsimi', 'Nizami', 'Pirallahı', 
-                        'Sabunçu', 'Səbail', 'Suraxanı', 'Yasamal']
-
-    const AbsheronStreets = ['Street', 'Ceyranbatan', 'Çiçək', 'Digah', 'Fatmayı', 'Görədil', 'Hökməli', 'Köhnə Corat', 'Qobu', 'Masazır', 
-                            'Mehdiabad', 'Müşviqabad', 'Novxanı', 'Pirəkəşkül', 'Saray', 'Yeni Corat', 'Zağulba']
-
-    const BineqediStreets = ['Street', '28 May', '2-ci Alatava', '6-cı mikrorayon', '7-ci mikrorayon', '8-ci mikrorayon', '9-cu mikrorayon', 
-                            'Binəqədi', 'Biləcəri', 'Xocəsən', 'Xutor', 'M.Ə.Rəsulzadə', 'Sulutəpə']
-    
-    const XetaiStreets = ['Street', 'Əhmədli', 'Həzi Aslanov', 'Köhnə Günəşli', 'NZS']
-
-    const XezerStreets = ['Street', 'Binə', 'Buzovna', 'Dübəndi', 'Gürgən', 'Qala', 'Mərdəkan', 'Şağan', 'Şimal DRES', 'Şüvəlan', 
-                            'Türkan', 'Zirə']
-    
-    const QaradagStreets = ['Street', 'Bibi Heybət', 'Ələt', 'Qızıldaş', 'Qobustan', 'Lökbatan', 'Puta', 'Sahil', 'Səngəçal', 'Şıxov', 
-                            'Şübani']
-
-    const NerimanovStreets = ['Street', 'Böyükşor', 'Nərimanov']
-
-    const NesimiStreets = ['Street', '1-ci mikrorayon', '2-ci mikrorayon', '3-cü mikrorayon', '4-cü mikrorayon', '5-ci mikrorayon', 
-                            'Kubinka']
-
-    const NizamiStreets = ['Street', '8-ci kilometr', 'Keşlə']
-
-    const SabuncuStreets = ['Street', 'Bakıxanov', 'Balaxanı', 'Bilgəh', 'Kürdəxanı', 'Maştağa', 'Məmmədli', 'Nardaran', 'Pirşağı', 
-                            'Ramana', 'Sabunçu', 'Savalan', 'Yeni Balaxanı', 'Yeni Ramana', 'Zabrat']
-                
-    const SebailStreets = ['Street', '20-ci Sahə', 'Badamdar', 'Bayıl']
-
-    const SuraxaniStreets = ['Street', 'Bahar', 'Bülbülə', 'Dədə Qorqud', 'Əmircan', 'Günəşli', 'Hövsan', 'Qaraçuxur', 'Massiv A', 
-                            'Massiv B', 'Massiv D', 'Massiv G', 'Massiv V', 'Suraxanı', 'Şərq', 'Yeni Günəşli', 'Yeni Suraxanı',
-                            'Zığ']
-
-    const YasamalStreets = ['Street', 'Yasamal', 'Yeni Yasamal']
-
-    const hours = ['1', '2', '3', '4', '5', '6' ,'7' ,'8', '9', '10', '11', '12', '13', '14', '15', '16', '17',
-                    '18', '19' ,'20', '21','22','23']
 
     const [city, setCity] = useState('City/District')
     const [district, setDistrict] = useState('District')
@@ -143,7 +101,7 @@ const FormStep3 = ({ next, prevCity, prevDistrict, prevStreet, prevHour, prevDay
         if(prevStreet !== ""){ setStreet(prevStreet) }
         if(prevHour !== ""){ setHour(prevHour) }
         if(prevDay !== ""){ setDay(prevDay) }
-    }, [])
+    }, [prevCity, prevDistrict, prevStreet, prevHour, prevDay])
 
     return (
         <KeyboardAwareScrollView style={{ flex: 1, backgroundColor: 'white' }} showsVerticalScrollIndicator={false}>

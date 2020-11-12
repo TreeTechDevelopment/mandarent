@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { View, TouchableOpacity, Dimensions } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome'
+import Icon1 from 'react-native-vector-icons/FontAwesome5'
+
+import { appContext } from '../context/Provider'
 
 const CustomBottomTab = ({ state, descriptors, navigation }) => {
 
-    const { height } = Dimensions.get('window')
+    const context = useContext(appContext)
+
+    const { height } = Dimensions.get('window') 
 
     return(
         <View style={{ flexDirection: 'row', backgroundColor: 'white', height: height * 0.07, alignItems: 'flex-end'}}>
@@ -23,7 +28,7 @@ const CustomBottomTab = ({ state, descriptors, navigation }) => {
                         target: route.key,
                     });
                     if (!isFocused && !event.defaultPrevented) { 
-                        if(route.name === "Rent"){ navigation.navigate('RentProduct')  }
+                        if(route.name === "Rent"){ context.dispatchShowRentMenu({ type: 'SET', value: !context.showRentMenu })  }
                         else{ navigation.navigate(route.name)  }
                     }
                 };
@@ -50,7 +55,7 @@ const CustomBottomTab = ({ state, descriptors, navigation }) => {
                             { alignItems: 'center', justifyContent: 'center', flex: 1, backgroundColor: 'rgb(246,246,246)' }}>
                         {
                             label === "Home" ? <Icon name="home" size={size} color={color} /> :
-                            label === "Favorites" ? <Icon name="star" size={size} color={color}/> :
+                            label === "ShopCart" ? <Icon1 name="shopping-cart" size={size} color={color}/> :
                             label === "Rent" ? (
                                 <View style={{ 
                                     position: 'relative', 

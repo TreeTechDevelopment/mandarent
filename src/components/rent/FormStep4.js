@@ -21,7 +21,7 @@ const FormStep4 = ({ next, prevPriceHourly, prevPriceDaily, prevWeeklyDiscount, 
 
     const handleBtn = () => {
         if(priceDaily !== "" && priceHourly !== ""){
-            next({ priceHourly, priceDaily,weeklyDiscount, monthlyDiscount })
+            next({ hourly: priceHourly, daily: priceDaily,weeklyDiscount, monthlyDiscount })
         }
     }
 
@@ -33,7 +33,7 @@ const FormStep4 = ({ next, prevPriceHourly, prevPriceDaily, prevWeeklyDiscount, 
         if(prevPriceDaily !== ""){ setPriceDaily(prevPriceDaily) }
         if(prevWeeklyDiscount !== ""){ setWeeklyDiscount(prevWeeklyDiscount) }
         if(prevMonthlyDiscount !== ""){ setMonthlyDiscount(prevMonthlyDiscount) }
-    }, [])
+    }, [prevPriceHourly, prevPriceDaily, prevWeeklyDiscount,prevMonthlyDiscount])
 
     return (
         <KeyboardAwareScrollView style={{ flex: 1, backgroundColor: 'white' }} showsVerticalScrollIndicator={false}>
@@ -99,7 +99,7 @@ const FormStep4 = ({ next, prevPriceHourly, prevPriceDaily, prevWeeklyDiscount, 
                 <View style={styles.btnNextContainer}>
                     <TouchableNativeFeedback onPress={handleBtn}>
                         <View style={styles.btnNext}>
-                            <Text style={styles.btnNextText}>Finish</Text>
+                            <Text style={styles.btnNextText}>{edit ? 'Save Changes' : 'Finish'}</Text>
                         </View>
                     </TouchableNativeFeedback>
                 </View>

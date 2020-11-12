@@ -40,7 +40,7 @@ const CustomDrawerNavigator = (props) => {
                         fontSize: 17,
                         marginLeft: -15
                     }}
-                    onPress={() => props.navigation.closeDrawer()}
+                    onPress={() => props.navigation.navigate('Category', { categoryName: "photo" })}
                 />
                 <DrawerItem 
                     label="Drones"
@@ -50,7 +50,7 @@ const CustomDrawerNavigator = (props) => {
                         fontSize: 17,
                         marginLeft: -15
                     }}
-                    onPress={() => props.navigation.closeDrawer()}
+                    onPress={() => props.navigation.navigate('Category', { categoryName: "drone" })}
                 />
                 <DrawerItem 
                     label="Video Games/PS"
@@ -60,7 +60,7 @@ const CustomDrawerNavigator = (props) => {
                         fontSize: 17,
                         marginLeft: -15
                     }}
-                    onPress={() => props.navigation.closeDrawer()}
+                    onPress={() => props.navigation.navigate('Category', { categoryName: "games" })}
                 />
                 <DrawerItem 
                     label="Travel"
@@ -70,7 +70,7 @@ const CustomDrawerNavigator = (props) => {
                         fontSize: 17,
                         marginLeft: -15
                     }}
-                    onPress={() => props.navigation.closeDrawer()}
+                    onPress={() => props.navigation.navigate('Category', { categoryName: "travel" })}
                 />
                 <DrawerItem 
                     label="Board Games"
@@ -80,7 +80,7 @@ const CustomDrawerNavigator = (props) => {
                         fontSize: 17,
                         marginLeft: -15
                     }}
-                    onPress={() => props.navigation.closeDrawer()}
+                    onPress={() => props.navigation.navigate('Category', { categoryName: "board-games" })}
                 />
                 <DrawerItem 
                     label="Tools"
@@ -90,7 +90,7 @@ const CustomDrawerNavigator = (props) => {
                         fontSize: 17,
                         marginLeft: -15
                     }}
-                    onPress={() => props.navigation.closeDrawer()}
+                    onPress={() => props.navigation.navigate('Category', { categoryName: "tools" })}
                 />
                 <DrawerItem 
                     label="Books"
@@ -100,7 +100,7 @@ const CustomDrawerNavigator = (props) => {
                         fontSize: 17,
                         marginLeft: -15
                     }}
-                    onPress={() => props.navigation.closeDrawer()}
+                    onPress={() => props.navigation.navigate('Category', { categoryName: "books" })}
                 />
                 <DrawerItem 
                     label="Hobbies"
@@ -110,7 +110,7 @@ const CustomDrawerNavigator = (props) => {
                         fontSize: 17,
                         marginLeft: -15
                     }}
-                    onPress={() => props.navigation.closeDrawer()}
+                    onPress={() => props.navigation.navigate('Category', { categoryName: "drawing" })}
                 />
                 <DrawerItem 
                     label="Garden"
@@ -120,7 +120,7 @@ const CustomDrawerNavigator = (props) => {
                         fontSize: 17,
                         marginLeft: -15
                     }}
-                    onPress={() => props.navigation.closeDrawer()}
+                    onPress={() => props.navigation.navigate('Category', { categoryName: "home" })}
                 />
                 <DrawerItem 
                     label="Electronics"
@@ -130,7 +130,7 @@ const CustomDrawerNavigator = (props) => {
                         fontSize: 17,
                         marginLeft: -15
                     }}
-                    onPress={() => props.navigation.closeDrawer()}
+                    onPress={() => props.navigation.navigate('Category', { categoryName: "technology" })}
                 />
                 <DrawerItem 
                     label="Bicycles"
@@ -140,7 +140,7 @@ const CustomDrawerNavigator = (props) => {
                         fontSize: 17,
                         marginLeft: -15
                     }}
-                    onPress={() => props.navigation.closeDrawer()}
+                    onPress={() => props.navigation.navigate('Category', { categoryName: "bicycle" })}
                 />
                 <DrawerItem 
                     label="Scooter"
@@ -150,7 +150,7 @@ const CustomDrawerNavigator = (props) => {
                         fontSize: 17,
                         marginLeft: -15
                     }}
-                    onPress={() => props.navigation.closeDrawer()}
+                    onPress={() => props.navigation.navigate('Category', { categoryName: "scooter" })}
                 />
                 <DrawerItem 
                     label="Fitness"
@@ -160,7 +160,7 @@ const CustomDrawerNavigator = (props) => {
                         fontSize: 17,
                         marginLeft: -15
                     }}
-                    onPress={() => props.navigation.closeDrawer()}
+                    onPress={() => props.navigation.navigate('Category', { categoryName: "fitness" })}
                 />
                 <DrawerItem 
                     label="Music"
@@ -170,7 +170,7 @@ const CustomDrawerNavigator = (props) => {
                         fontSize: 17,
                         marginLeft: -15
                     }}
-                    onPress={() => props.navigation.closeDrawer()}
+                    onPress={() => props.navigation.navigate('Category', { categoryName: "music" })}
                 />
             </DrawerContentScrollView>
         </View>

@@ -10,7 +10,6 @@ const styles = StyleSheet.create({
     },
     navbarSettingsContainer:{
         width,
-        height: height * 0.17,
         borderBottomColor: 'black',
         borderBottomWidth: 2,
         backgroundColor: 'white',

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { View } from 'react-native'
 
 import TopBar from '../components/rent/TopBar'
@@ -12,7 +12,7 @@ import styles from '../styles/Rent'
 const Rent = ({ navigation }) => {
 
     const [step, setStep] = useState(1)
-    const [itemName, setItemName] = useState('')
+    const [name, setItemName] = useState('')
     const [description, setDescription] = useState('')
     const [instructions, setInstructions] = useState('')
     const [category1, setCategory1] = useState('')
@@ -29,7 +29,7 @@ const Rent = ({ navigation }) => {
     const [images, setImages] = useState([])
     
     const handleInfoStep1 = (info) => {
-        setItemName(info.itemName)
+        setItemName(info.name)
         setDescription(info.description)
         setInstructions(info.instructions)
         setStep(step+1)
@@ -52,8 +52,8 @@ const Rent = ({ navigation }) => {
     }
 
     const handleInfoStep4 = (info) => {
-        setPriceHourly(info.priceHourly)
-        setPriceDaily(info.priceDaily)
+        setPriceHourly(info.hourly)
+        setPriceDaily(info.daily)
         setWeeklyDiscount(info.weeklyDiscount)
         setMonthlyDiscount(info.monthlyDiscount)
     }
@@ -70,7 +70,7 @@ const Rent = ({ navigation }) => {
             {step === 1 ? (
                 <FormStep1 
                     next={handleInfoStep1}
-                    prevItemName={itemName}
+                    prevItemName={name}
                     prevDescription={description}
                     prevInstructions={instructions}
                 />

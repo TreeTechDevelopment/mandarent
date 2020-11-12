@@ -20,7 +20,7 @@ const travelIcon = require('../../../assets/images/travel.png')
 
 
 
-const Categories = () => {
+const Categories = ({ gotoCategory }) => {
 
     const categories = ["technology", "board-games", "books", "drawing", "drone", "fitness", "games", "home", "music", 
                     "photo", "scooter", "tools", "travel", "bicycle"]
@@ -51,7 +51,7 @@ const Categories = () => {
                 horizontal
                 data={categories}
                 renderItem={({ item, index }) => (
-                    <TouchableNativeFeedback onPress={() => {}}>
+                    <TouchableNativeFeedback onPress={() => { gotoCategory(item) }}>
                         <Image 
                             source={returnCategoryIcon(item)}
                             style={index === 0 ? {...styles.categoryIcon, marginLeft: 0} : styles.categoryIcon}

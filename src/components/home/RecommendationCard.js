@@ -4,17 +4,20 @@ import { View, Image, Text, TouchableNativeFeedback } from 'react-native'
 import styles from '../../styles/Home'
 import Shadow from '../Shadow'
 
-const RecomendationCard = ({ recommendation, index }) => {
+const RecomendationCard = ({ recommendation, index, navigation }) => {
 
-    //const openProduct = () => navigation.navigate('Product', { product: recommendation })
+    const handleBtn = () => {
+        if(recommendation.name === "Demanded"){ navigation.navigate('Demanded') }
+    }
 
     return (
         <Shadow 
             marginHorizontal 
             borderRadius
             first={index === 0}
+            maxHeight
         >
-            <TouchableNativeFeedback onPress={() => {}}>
+            <TouchableNativeFeedback onPress={handleBtn}>
                 <View style={styles.recommendationCard}>
                     <Image 
                         source={recommendation.image}

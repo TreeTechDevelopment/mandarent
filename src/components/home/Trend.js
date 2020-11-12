@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import ImageCarousel from './ImageCarousel'
 import styles from '../../styles/Home'
 
-const Trend = ({ trend, navigation }) => {
+const Trend = ({ trend, navigation, lastItem }) => {
 
     const [like, setLike] = useState(false)
 
@@ -14,13 +14,15 @@ const Trend = ({ trend, navigation }) => {
     const openProduct = () => navigation.navigate('Product', { product: trend })
 
     return (
-        <View style={styles.trendCard}>
-            <TouchableWithoutFeedback onPress={likeTrend}>
-                <View style={styles.trendHeartIconContainer}>
-                    <Icon name="heart" size={20} color="white" />
-                    <Icon name="heart" size={16} color={like ? 'red' : "rgb(144,144,144)"} style={{ marginLeft: -18 }}/>
-                </View>
-            </TouchableWithoutFeedback>
+        <View style={lastItem ? {...styles.trendCard, marginBottom: 20} : styles.trendCard}>
+            <View style={styles.trendHeartIconContainer}>
+                <TouchableWithoutFeedback onPress={likeTrend}>
+                    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                        <Icon name="heart" size={20} color="white" />
+                        <Icon name="heart" size={16} color={like ? 'red' : "rgb(144,144,144)"} style={{ marginLeft: -17 }}/>
+                    </View>
+                </TouchableWithoutFeedback>
+            </View>
             <View style={styles.trendCarouselContainer}>
                 <ImageCarousel 
                     images={trend.images}

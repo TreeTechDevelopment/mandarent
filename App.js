@@ -3,6 +3,7 @@ import { StatusBar, View } from 'react-native'
 import Navigator from './src/navigators/Navigator'
 
 import Provider from './src/context/Provider'
+import ModalRent from './src/components/ModalRent'
 import styles from './src/styles/Home';
 
 const App = () => {
@@ -13,6 +14,7 @@ const App = () => {
           backgroundColor="white"
           barStyle="dark-content"
         />
+        <ModalRent />
         <Navigator />
       </View>
     </Provider>

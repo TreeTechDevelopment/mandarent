@@ -141,7 +141,7 @@ const styles = StyleSheet.create({
         alignItems: 'center' 
     },
     trendTextLight:{
-        fontFamily: 'Quicksand_Light'
+        fontFamily: 'Quicksand_Book'
     },
     trendInfoContainer:{
         flexDirection: 'row',

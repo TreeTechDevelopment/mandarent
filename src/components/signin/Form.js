@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, Text, TextInput, TouchableNativeFeedback, KeyboardAvoidingView, Platform } from 'react-native'
+import { View, Text, TextInput, TouchableNativeFeedback } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons';
 
 import styles from '../../styles/SignIn'

@@ -3,7 +3,7 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import DrawerNavigator from './DrawerNavigator'
-import Favorites from '../views/Favorites';
+import CartShop from '../views/ShopCart';
 import Rent from '../views/Rent';
 import Messages from '../views/Messages';
 import ProfileNavigator from './ProfileNavigator';
@@ -21,7 +21,7 @@ export default function BottomTabNavigator() {
             tabBar={props => <CustomBottomTab {...props} />}
         >
             <Tab.Screen name="Home"  component={DrawerNavigator} />
-            <Tab.Screen name="Favorites" component={Favorites} />
+            <Tab.Screen name="ShopCart" component={CartShop} />
             <Tab.Screen name="Rent" component={Rent}/>
             <Tab.Screen name="Messages" component={Messages} />
             <Tab.Screen name="Profile" component={ProfileNavigator} />

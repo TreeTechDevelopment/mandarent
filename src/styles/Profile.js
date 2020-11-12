@@ -59,7 +59,11 @@ const styles = StyleSheet.create({
         color: 'rgb(21,0,56)',
         marginBottom: 10,
         marginLeft: width * 0.1,
+    },
+    iconContainerUserMenu:{
+        minWidth: width * 0.1
     }
+
 })
 
 export default styles

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { View, Text, TouchableNativeFeedback } from 'react-native'
 
-import NavbarSettings from '../components/settings/NavbarSettings'
+import NavbarSettings from '../components/settings/Navbar'
 import styles from '../styles/Settings'
 
 const Settings = ({ navigation }) => {

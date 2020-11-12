@@ -49,19 +49,20 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         marginTop: 10
     },
-    inputMessageContainer: {
-        width: width * 0.8,
-        marginTop: 20,
-        alignItems: 'center'
+    messageLenderText: {
+        fontFamily: 'Quicksand_Book',
+        color: 'rgb(100,100,100)',
+        fontSize: 18
     },
-    inputMessage: {
-        borderColor: 'rgb(213,224,228)',
+    messageLender: {
+        borderColor: 'rgb(100,100,100)',
         borderWidth: 1,
         borderRadius: 5,
-        width: width * 0.5,
-        fontFamily: 'Quicksand_Book',
-        paddingLeft: 20,
-        height: height * 0.05
+        width: width * 0.6,
+        height: height * 0.05,
+        marginTop: 5,
+        alignItems: 'center',
+        justifyContent: 'center'
     },
     mapContainer:{
         width,
@@ -120,7 +121,7 @@ const styles = StyleSheet.create({
         fontFamily: 'Quicksand_Bold',
         fontSize: 20
     },
-    infoProductDescriptionContainer: {
+    infoProductDescriptionContainer: { 
         borderColor: 'black',
         borderWidth: 1,
         width: width * 0.8,
@@ -164,7 +165,7 @@ const styles = StyleSheet.create({
     },
     marginLeftImagesListings: {
         marginLeft: width * 0.1
-    },
+    }, 
     productCarouselContainer:{
         width,
         height: height * 0.4,
@@ -192,6 +193,39 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 22.5
+    },
+    lenderInfoContainer:{
+        width,
+        paddingHorizontal: width * 0.1,
+        paddingTop: 20
+    },
+    lenderRateContainer: {
+        flexDirection: 'row',
+        width: width * 0.8,
+        justifyContent: 'space-between',
+        marginBottom: 10
+    },
+    lenderRate:{
+        flexDirection: 'row',
+        alignItems: 'center'
+    },
+    lenderRateText:{
+        fontFamily: 'Quicksand_Book'
+    },
+    lenderImage:{
+        width: 70,
+        height: 70,
+        borderRadius: 35,
+        marginRight: 20
+    },
+    lenderImageContainer:{
+        width: width * 0.8,
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    lenderName:{
+        fontFamily: 'Quicksand_Book',
+        fontSize: 20
     }
 })
 

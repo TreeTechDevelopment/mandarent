@@ -10,6 +10,9 @@ import Trends from '../components/home/Trends'
 import SearchInput from '../components/home/SearchInput'
 
 const Home = ({ navigation }) => {
+
+    const gotoCategory = (category) => navigation.navigate('Category', { categoryName: category })
+
     return (
         <View style={styles.mainContainer}> 
             <Navbar navigation={navigation}/>
@@ -17,7 +20,7 @@ const Home = ({ navigation }) => {
                 <Shadow marginTop>
                     <SearchInput />
                 </Shadow>
-                <Categories />
+                <Categories gotoCategory={gotoCategory}/>
                 <Recomendations navigation={navigation}/>
                 <Trends navigation={navigation}/>
             </ScrollView>

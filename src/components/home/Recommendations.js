@@ -6,7 +6,7 @@ import RecommendationCard from './RecommendationCard'
 
 import { recommendationsTest } from '../../testing/test'
 
-const Recommendations = ({ navigation }) => {
+const Recommendations = ({ navigation }) => { 
 
     const [recommendations, setRecommendations] = useState(recommendationsTest)
 

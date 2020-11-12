@@ -7,10 +7,9 @@ import {Picker} from '@react-native-community/picker';
 
 import styles from '../../styles/Rent'
 
-const FormStep2 = ({ next, prevImages, prevCategory1, prevCategory2 }) => {
+import { categories} from '../../data'
 
-    const categories = ['Camera', 'Drones', 'Video Games/PS', 'Travel', 'Board Games', 'Tools', 'Books', 'Hobbies', 'Garden',
-                        'Electronics', 'Bicycles', 'Scooter', 'Fitness', 'Music']
+const FormStep2 = ({ next, prevImages, prevCategory1, prevCategory2 }) => {
 
     const [images, setImages] = useState([])
     const [category1, setCategory1] = useState('Camera')
@@ -46,10 +45,10 @@ const FormStep2 = ({ next, prevImages, prevCategory1, prevCategory2 }) => {
     }
 
     useEffect(() => {
-        if(prevImages.length !== 0){ setImages(images) }
+        if(prevImages.length !== 0){ setImages(prevImages) }
         if(prevCategory1 !== ""){ setCategory1(prevCategory1) }
         if(prevCategory2 !== ""){ setCategory2(prevCategory2) }
-    }, [])
+    }, [ prevImages, prevCategory1, prevCategory2])
 
     return (
         <View style={styles.formStep2}>
@@ -75,14 +74,14 @@ const FormStep2 = ({ next, prevImages, prevCategory1, prevCategory2 }) => {
                             {images.map( image => (
                                 <View key={ image.path + Math.random().toString()} style={styles.imageContainer}>
                                     <Image 
-                                        source={{ uri: image.path }}
+                                        source={image.path ? { uri: image.path } : image}
                                         style={styles.imageRent} 
                                     />
                                     <TouchableWithoutFeedback onPress={() => deleteImage(image)}>
                                         <View style={styles.iconDeleteImageRentContainer}>
                                             <Icon1 name="close" color="black" size={20}/>
                                         </View>
-                                    </TouchableWithoutFeedback>
+                                    </TouchableWithoutFeedback> 
                                 </View>
                             ) )}
                         </View>
@@ -116,7 +115,7 @@ const FormStep2 = ({ next, prevImages, prevCategory1, prevCategory2 }) => {
                         ))}
                     </Picker>
                 </View>
-                <View style={{...styles.btnNextContainer, position: 'relative'}}>
+                <View style={{...styles.btnNextContainer, position: 'relative', marginBottom: 20}}>
                     <TouchableNativeFeedback onPress={handleBtn}>
                         <View style={styles.btnNext}>
                             <Text style={styles.btnNextText}>Next</Text>

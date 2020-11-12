@@ -7,7 +7,7 @@ import styles from '../../styles/Rent'
 
 const FormStep1 = ({ next, prevItemName, prevDescription, prevInstructions }) => {
 
-    const [itemName, setItemName] = useState('')
+    const [name, setItemName] = useState('')
     const [description, setDescription] = useState('')
     const [instructions, setInstructions] = useState('')
     const [disableInstructions, setDisableInstructions] = useState(false)
@@ -25,19 +25,20 @@ const FormStep1 = ({ next, prevItemName, prevDescription, prevInstructions }) =>
         /* if(itemName !== "" && description !== "" && (disableInstructions || (!disableInstructions && instructions !== "") )){
             next(itemName, description, instructions)
         } */
-        next({itemName, description, instructions})
+        next({name, description, instructions})
     }
 
     useEffect(() => {
         if(prevItemName !== ""){ setItemName(prevItemName) }
         if(prevDescription !== ""){ setDescription(prevDescription) }
-        if(prevInstructions !== ""){ 
+        if(prevInstructions !== "" && prevInstructions){ 
             setItemName(prevItemName) 
             setDisableInstructions(false)
+            setInstructions(prevInstructions)
         }else{
             if(prevItemName !== ""){ setDisableInstructions(true) }
         }
-    }, [])
+    }, [prevItemName, prevDescription, prevInstructions])
 
     return (
         <KeyboardAwareScrollView style={{ flex: 1, backgroundColor: 'white' }} showsVerticalScrollIndicator={false}>
@@ -45,7 +46,7 @@ const FormStep1 = ({ next, prevItemName, prevDescription, prevInstructions }) =>
                 <Text style={styles.title}>Step 1</Text>
                 <Text style={styles.label}>What is the item?</Text>
                 <TextInput 
-                    value={itemName}
+                    value={name}
                     style={styles.input}
                     onChange={handleInputItemName}
                     placeholder="Item Name"
@@ -68,7 +69,7 @@ const FormStep1 = ({ next, prevItemName, prevDescription, prevInstructions }) =>
                     editable={!disableInstructions}
                 />
                 <TouchableWithoutFeedback onPress={handleCheckbox}>
-                    <View style={styles.checkBoxContainer}>
+                    <View style={styles.checkBoxContainer} >
                         <CheckBox
                             value={disableInstructions}
                             tintColors={{ true: 'rgb(26,26,26)', false: 'black' }}
